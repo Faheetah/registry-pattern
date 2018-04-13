@@ -4,8 +4,8 @@ import (
 	"log"
 
 	"github.com/burntsushi/toml"
-	inputs "github.com/faheetah/repository-pattern/plugins/inputs"
-	outputs "github.com/faheetah/repository-pattern/plugins/outputs"
+	inputs "github.com/faheetah/registry-pattern/plugins/inputs"
+	outputs "github.com/faheetah/registry-pattern/plugins/outputs"
 )
 
 // Config base structure that holds our configuration, but not any actual plugins
@@ -32,7 +32,7 @@ func main() {
 	}
 
 	// Initial read of the config, this tells us what plugins to load too
-	if md, err = toml.DecodeFile("repository-pattern.toml", &conf); err != nil {
+	if md, err = toml.DecodeFile("registry-pattern.toml", &conf); err != nil {
 		log.Fatal(err)
 	}
 

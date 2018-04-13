@@ -1,6 +1,6 @@
 version: '3'
 services:
-  repository_pattern:
+  registry_pattern:
     build:
       context: .
     ports:
