@@ -1,10 +1,5 @@
 package inputs
 
-import (
-	"errors"
-	_ "github.com/burntsushi/toml"
-)
-
 // InputPlugin defines the interface that can interact with the registry
 type InputPlugin interface {
 	Message() string

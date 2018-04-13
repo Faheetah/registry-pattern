@@ -1,10 +1,5 @@
 package outputs
 
-import (
-	"errors"
-	_ "github.com/burntsushi/toml"
-)
-
 // OutputPlugin defines the interface that can interact with the registry
 type OutputPlugin interface {
 	Send(string) (error)
@@ -16,4 +11,5 @@ func Register(name string, plugin OutputPlugin) {
 	Outputs[name] = plugin
 }
 
+// The registry
 var Outputs = make(map[string]OutputPlugin)
