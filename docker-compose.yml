@@ -1,0 +1,7 @@
+version: '3'
+services:
+  repository_pattern:
+    build:
+      context: .
+    ports:
+      - "1323:1323"

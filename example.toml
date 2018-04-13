@@ -1,0 +1,11 @@
+[inputs.file]
+path = "/foo/bars"
+
+[inputs.http]
+port = 4000
+
+[outputs.file]
+path = "/var/log/foobars"
+
+[outputs.http]
+url = "http://localhost:8080"
