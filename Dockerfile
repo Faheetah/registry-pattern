@@ -13,5 +13,5 @@ RUN go build -ldflags "-s -w" registry-pattern.go
 FROM scratch
 EXPOSE 1323
 COPY --from=build /go/src/github.com/faheetah/registry-pattern/registry-pattern /registry-pattern
-COPY example.toml /registry-pattern.toml
+COPY registry-pattern.toml /registry-pattern.toml
 CMD ["/registry-pattern"]
