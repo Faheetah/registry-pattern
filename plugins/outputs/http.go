@@ -6,7 +6,7 @@ import (
 )
 
 type Http struct {
-	Url     string
+	Url string
 }
 
 func (h *Http) Send(msg string) (err error) {
@@ -18,5 +18,5 @@ func (h *Http) Send(msg string) (err error) {
 
 func init() {
 	log.Println("initializing http")
-	Register("http", &Http{})
+	Register("http", func() OutputPlugin { return &Http{} })
 }

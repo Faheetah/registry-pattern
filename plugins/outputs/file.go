@@ -6,7 +6,7 @@ import (
 )
 
 type File struct {
-	Path    string
+	Path string
 }
 
 func (f *File) Send(msg string) (err error) {
@@ -18,5 +18,5 @@ func (f *File) Send(msg string) (err error) {
 
 func init() {
 	log.Println("initializing file")
-	Register("file", &File{})
+	Register("file", func() OutputPlugin { return &File{} })
 }

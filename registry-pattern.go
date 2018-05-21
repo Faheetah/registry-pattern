@@ -43,7 +43,7 @@ func main() {
 		// Get the input object from the registry
 		// Always validate the plugin exists to avoid a NPE
 		if p, ok := inputs.Inputs[n]; ok {
-			i = p
+			i = p()
 		} else {
 			log.Fatal(err)
 		}
@@ -63,7 +63,7 @@ func main() {
 		var o outputs.OutputPlugin
 
 		if p, ok := outputs.Outputs[n]; ok {
-			o = p
+			o = p()
 		} else {
 			log.Fatal("could not find output plugin %s", n)
 		}

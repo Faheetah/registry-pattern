@@ -18,11 +18,11 @@ func (f *File) Start() (out string, err error) {
 	return
 }
 
-func (f *File) Message() (string) {
+func (f *File) Message() string {
 	return f.message
 }
 
 func init() {
 	log.Println("initializing file")
-	Register("file", &File{})
+	Register("file", func() InputPlugin { return &File{} })
 }

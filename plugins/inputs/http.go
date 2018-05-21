@@ -18,11 +18,11 @@ func (h *Http) Start() (out string, err error) {
 	return
 }
 
-func (h *Http) Message() (string) {
+func (h *Http) Message() string {
 	return h.message
 }
 
 func init() {
 	log.Println("initializing http")
-	Register("http", &Http{})
+	Register("http", func() InputPlugin { return &Http{} })
 }
